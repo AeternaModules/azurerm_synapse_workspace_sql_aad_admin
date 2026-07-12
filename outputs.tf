@@ -1,3 +1,7 @@
+output "synapse_workspace_sql_aad_admins_id" {
+  description = "Map of id values across all synapse_workspace_sql_aad_admins, keyed the same as var.synapse_workspace_sql_aad_admins"
+  value       = { for k, v in azurerm_synapse_workspace_sql_aad_admin.synapse_workspace_sql_aad_admins : k => v.id }
+}
 output "synapse_workspace_sql_aad_admins_login" {
   description = "Map of login values across all synapse_workspace_sql_aad_admins, keyed the same as var.synapse_workspace_sql_aad_admins"
   value       = { for k, v in azurerm_synapse_workspace_sql_aad_admin.synapse_workspace_sql_aad_admins : k => v.login }
